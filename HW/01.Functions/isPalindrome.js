@@ -8,6 +8,7 @@
 function isPalindrome(word){
     let wordReversed = word.split("").reverse().join("");
     //console.log(wordReversed);
+    
     if(wordReversed === word){
         return true;
     }else{
