@@ -6,8 +6,8 @@
 // Hint: използвайте Math.random() функцията за генериране на случайно число.
 
 function generateRandomNumber(start, end){
-    //https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
-    
+    //Ideas from https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range
+
     let min = Math.ceil(start);
     let max = Math.ceil(end);
     let randomNumber =  Math.floor(Math.random() * (max - min + 1)) + min;
