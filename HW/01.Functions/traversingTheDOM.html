@@ -21,7 +21,7 @@
   </ul>
 
   <ol>
-    <li id="red" class="red">do not make me red</li>
+    <li id="redID" class="red">do not make me red</li>
   </ol>
 
   
@@ -55,9 +55,14 @@
 
     }
 
-    // let startNode = document.body;
-    let startNode = document.querySelector("#blue");
-    
+    //Works on the whole body element:
+    //let startNode = document.body;
+
+    //Works on a element without children:
+    let startNode = document.querySelector("#redID");
+
+    //Does not throw an error, when it is called on a non-existent element
+    //let startNode = document.querySelector("#blue");
     
     traverseDOM( startNode );
 
