@@ -35,10 +35,11 @@
 
     // HW: fix it
     function traverseDOM(node) {
-      if(node === null){
+      if(node === null || node === undefined){
         return;
       }
 
+      // do something with each child element:
       doSomething(node);
       // get all HTML child nodes of node
       let children = node.children;
@@ -46,9 +47,9 @@
       // loop over children:
       for (let i = 0; i < children.length; i++) {
         let el = children[i];
-        console.log(el);
+        //console.log(el);
         // do something with each child element:
-        doSomething(el);
+        // doSomething(el);
 
         traverseDOM(el);
       }
@@ -56,13 +57,13 @@
     }
 
     //Works on the whole body element:
-    //let startNode = document.body;
+    let startNode = document.body;
 
     //Works on a element without children:
-    let startNode = document.querySelector("#redID");
+    // let startNode = document.querySelector("#redID");
 
     //Does not throw an error, when it is called on a non-existent element
-    //let startNode = document.querySelector("#blue");
+    // let startNode = document.querySelector("#blue");
     
     traverseDOM( startNode );
 
