@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="to do app, tasks, calendar, manager">
+    <meta name="description" content="To Do App">
+    <meta name="author" content="Boris Yakimov">
+    <title>To Do App</title>
+    <style>
+        h1, h2{
+            text-align: center;
+        }
+        table, td, th{
+            border: 1px solid #000;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        #requiredAsterisk{
+            text-align: right;
+        }
+        #tasksTable{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>To Do App</h1>
+    <!-- <nav>
+        <ul>
+            <li id="addTasks">Add Tasks</li>
+            <li id="myCalendar">My Calendar</li>
+        </ul>
+    </nav> -->
+
+    <header>
+        <h2>Add Tasks:</h2>
+    </header>
+
+    <form method="POST">
+        <fieldset>
+            <legend>Create Task:</legend>
+            <label for="taskTitle">Enter task:</label>
+            <input type="text" id="taskTitle" name="taskTitle" required><span>&nbsp;*</span> <br><br>
+            <label for="taskDetails">Some details:</label><br>
+            <textarea name="taskDetails" id="taskDetails" cols="35" rows="10"></textarea><br><br>
+            <label for="taskDate">Task date:</label>
+            <input type="date" id="taskDate" name="taskDate"><br><br>
+            <label for="taskTime">Task time:</label>
+            <input type="time" id="taskTime" name="taskTime"><br><br>
+            <button type="button" id="submitButton">Add Task</button>
+        </fieldset>
+        <p id="requiredAsterisk">* is required!</p>
+    </form>
+    
+    <button>Mark All as Completed</button>
+    <button>Delete All Completed</button>
+    <button>Delete All Tasks</button>
+    <h2>My Tasks:</h2>
+    <p id="noTasks">There are no current tasks.</p>
+    <table id="tasksTable">
+        <tr>
+            <th>Completed</th>
+            <th>Task</th>
+            <th>Details</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </table>
+
+    <script>
+        function addTask(){
+            const taskTitle = document.getElementById("taskTitle").value;
+            const taskDetails = document.getElementById("taskDetails").value;
+            const taskDate = document.getElementById("taskDate").value;
+            const taskTime = document.getElementById("taskTime").value;
+            
+            console.log(taskTitle);
+            console.log(taskDetails);
+            console.log(taskDate);
+            console.log(taskTime);
+
+            
+        }
+
+        const submitButton = document.getElementById("submitButton");
+        submitButton.addEventListener("click", addTask);
+        
+    </script>
+</body>
+</html>
