@@ -42,15 +42,22 @@
                 this.output.innerHTML = `Playing track: ${this.trackName}`;
             },
             init() {
+                let that  = this;
                 this.node.addEventListener("click", function (e) {
+                    // let that  = this;
                     if (e.target.tagName === "LI") {
-                        this.setTrack(e.target.innerText);
-                        this.showTrack();
+                        that.setTrack(e.target.innerText);
+                        
+                        // console.log(`this = ${this}`);
+                        // console.log(`e.target.innerText = ${e.target.innerText}`);
+
+                        that.showTrack();
                     }
                 });
             }
         };
         
+        // console.log(player);
         player.init();
     </script>
 </body>
