@@ -9,7 +9,15 @@ Animal.prototype.eat = function(){
 
 // Create a Cat Constructor, which will inherit from Animal:
 // <<<<< your code start here
+const Cat = function(name, food){
+    Animal.call(this, name, food);
+};
 
+Cat.prototype.eat = function(){
+    console.log(`${this.name} is eating ${this.food}`);
+}
+
+// Cat.__proto__ = Animal;
 
 // >>>>> your code ends here
 
