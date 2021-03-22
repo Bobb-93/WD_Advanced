@@ -5,7 +5,7 @@
 */
 
 let originalString = 'a1b2c3d';
-const re = /[0-9]/g; 
+const re = /\d/g; 
 
 let newString = originalString.replace(re, '-');
 
