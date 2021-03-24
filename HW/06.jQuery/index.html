@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Slideshow</title>
+    
+    <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    
+    <!-- Fotorama from CDNJS, 19 KB -->
+    <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+</head>
+<body>
+    <h1>Demo for <a href="https://fotorama.io/">Fotorama</a></h1>
+    <h2>A simple yet powerful responsive jQuery image gallery</h2>
+    <!-- Add images to <div class="fotorama"></div> -->
+    <div class="fotorama" data-width="60%"
+    data-ratio="800/600"
+    data-minwidth="200"
+    data-maxwidth="600"
+    data-minheight="300"
+    data-maxheight="100%"
+    data-nav="thumbs" 
+    data-transition="crossfade"
+    data-autoplay="true"
+    data-loop="true"
+    data-keyboard="true">
+        <img src="./images/netherlands-5039354_1920.jpg">
+        <img src="./images/sunset-5560658_1920.jpg">
+        <img src="./images/netherlands-5039354_1920.jpg">
+        <img src="./images/sunset-5560658_1920.jpg">
+    </div>
+</body>
+</html>
