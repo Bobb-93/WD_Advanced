@@ -1,0 +1,16 @@
+.menu li{
+	cursor: pointer;
+}
+.menu li:hover{
+	font-weight:bold;
+}
+.choosen{
+	/* opacity: .5; */
+	color: red;
+}
+.choosen::before{
+	content: "\2611\00a0";
+}
+ol{
+	list-style-type: none;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Menu Task </title>
+	<link rel="stylesheet" href="./main.css">
+</head>
+<body>
+	<main>
+		<h1></h1>
+		<section class="menu">
+			<h2>Restaurant Menu</h2>
+			<h3>Main Courses</h3>
+			<ol class="mainCourses">
+				<li data-price="1">Main - <span>1</span> лв.</li>
+				<li data-price="2">Main - <span>2</span> лв.</li>
+				<li data-price="3">Main - <span>3</span> лв.</li>
+				<li data-price="4">Main - <span>4</span> лв.</li>
+			</ol>
+			<h3>Deserts</h3>
+			<ol class="deserts">
+				<li data-price="2">Dessert - <span>2</span> лв.</li>
+				<li data-price="1">Dessert - <span>1</span> лв.</li>
+				<li data-price="6">Dessert - <span>6</span> лв.</li>
+			</ol>
+		</section>
+		<button class="btnCalcTotal">Calc total</button>
+		<button class="btnReset">Reset</button>
+	</main>
+	<div>
+		<span>Total: <span id="totalPriceSpan">0</span> лв.</span>
+	</div>
+	<script src="./main.js"></script>
+</body>
+</html>
