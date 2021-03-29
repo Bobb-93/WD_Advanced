@@ -6,7 +6,7 @@ let totalPlayTime;
 
 //auxilary functions
 function toSeconds(timeToConvert){
-    let time = timeToConvert.split(':');
+    let time = timeToConvert.split(":");
     
     let seconds = (+time[0]) * 60 * 60 + (+time[1]) * 60 + (+time[2]); 
     return seconds;
