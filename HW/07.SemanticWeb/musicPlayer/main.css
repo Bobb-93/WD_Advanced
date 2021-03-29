@@ -2,6 +2,52 @@ body{
     background-color: #333;
     color: #FFF;
 }
+
+h1{
+    margin-left: .2em;
+}
+
+p>span::after{
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #DEDEDE;
+    border-radius: 50%
+}
+
+p>span:hover{
+    cursor: pointer;
+}
+
 ul{
-    
+    list-style-type: none;
+}
+
+li::before{
+    content: "";
+    display: block;
+    position: relative;
+    height: 0;
+    width: 0;
+    left: -.75em;
+    top: .9em;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    /* border-left-color: #FFF; */
+    /* border-right-color: #FFF; */
+    border-style: solid;
+    border-width: 0.35em 0 0.35em 0.45em;  
+}
+
+#classical{
+    color: #00F1FF;
+}
+
+#rock{
+    color: #FF0078;
+}
+
+#newWave{
+    color: #D293F2;
 }
