@@ -6,9 +6,8 @@ let totalPlayTime;
 
 //auxilary functions
 function toSeconds(timeToConvert){
-    let time = timeToConvert.split(':'); // split it at the colons
+    let time = timeToConvert.split(':');
     
-    // minutes are worth 60 seconds. Hours are worth 60 minutes.
     let seconds = (+time[0]) * 60 * 60 + (+time[1]) * 60 + (+time[2]); 
     return seconds;
 }
@@ -23,13 +22,7 @@ function filterByGenre(genre){
     liList.forEach(function(listItem){
         if(genre === "all" || listItem.dataset.genre === genre){
             listItem.style.display = "list-item";
-            // console.log(listItem.dataset.trackLength);
-            // console.log(toSeconds(listItem.dataset.trackLength));
-            
             totalPlayTime += toSeconds(listItem.dataset.trackLength);
-            
-            // console.log(totalPlayTime);
-            
         }else if(listItem.dataset.genre !== genre){
             listItem.style.display = "none";
         }
@@ -41,16 +34,12 @@ function filterByGenre(genre){
 spanList.forEach(function(element){
     element.addEventListener("click", function(){
         if(element.dataset.genre === "classical"){
-            // console.log("classical");
             filterByGenre("classical");
         }else if(element.dataset.genre === "rock"){
-            // console.log("rock");
             filterByGenre("rock");
         }else if(element.dataset.genre === "newWave"){
-            // console.log("newWave");
             filterByGenre("newWave");
         }else if(element.dataset.genre === "all"){
-            // console.log("all");
             filterByGenre("all");
         }
     });
