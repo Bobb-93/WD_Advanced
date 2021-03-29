@@ -1,5 +1,5 @@
 //variables
-const spanList = document.querySelectorAll("span");
+const radioList = document.querySelectorAll("#genres input[type='radio']");
 const liList = document.querySelectorAll("li");
 const totalPlayTimeSpan = document.getElementById("totalPlayTimeSpan");
 let totalPlayTime;
@@ -31,15 +31,15 @@ function filterByGenre(genre){
 }   
 
 //event listener
-spanList.forEach(function(element){
+radioList.forEach(function(element){
     element.addEventListener("click", function(){
-        if(element.dataset.genre === "classical"){
+        if(this.value === "classical"){
             filterByGenre("classical");
-        }else if(element.dataset.genre === "rock"){
+        }else if(this.value === "rock"){
             filterByGenre("rock");
-        }else if(element.dataset.genre === "newWave"){
+        }else if(this.value === "newWave"){
             filterByGenre("newWave");
-        }else if(element.dataset.genre === "all"){
+        }else if(this.value === "all"){
             filterByGenre("all");
         }
     });

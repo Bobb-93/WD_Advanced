@@ -33,16 +33,20 @@ li:hover{
     cursor: context-menu;
 }
 
-span[data-genre="classical"]{
+label[for="classical"]{
     color: #00F1FF;
 }
 
-span[data-genre="rock"]{
+label[for="rock"]{
     color: #FF0078;
 }
 
-span[data-genre="newWave"]{
+label[for="newWave"]{
     color: #D293F2;
+}
+
+label:hover, input:hover{
+    cursor: pointer;
 }
 
 li[data-genre="classical"]::before{
@@ -68,17 +72,3 @@ li[data-genre="rock"]:hover{
 li[data-genre="newWave"]:hover{
     background-color: #D293F2;
 }
-
-#genres>span::after{
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: #DEDEDE;
-    border-radius: 50%
-}
-
-#genres>span:hover{
-    cursor: pointer;
-}
-
