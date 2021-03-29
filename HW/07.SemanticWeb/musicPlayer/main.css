@@ -22,32 +22,62 @@ p>span:hover{
 
 ul{
     list-style-type: none;
+    padding-left: .5em;
+}
+
+li{
+    list-style-position: inside;
+    margin-bottom: 0.2em;
+}
+
+li:hover{
+    cursor: context-menu;
 }
 
 li::before{
     content: "";
-    display: block;
-    position: relative;
+    display: inline-block;
     height: 0;
     width: 0;
-    left: -.75em;
-    top: .9em;
+    margin-right: 0.5em;
     border-top-color: transparent;
     border-bottom-color: transparent;
-    /* border-left-color: #FFF; */
-    /* border-right-color: #FFF; */
     border-style: solid;
     border-width: 0.35em 0 0.35em 0.45em;  
 }
 
-#classical{
+span[data-genre="classical"]{
     color: #00F1FF;
 }
 
-#rock{
+span[data-genre="rock"]{
     color: #FF0078;
 }
 
-#newWave{
+span[data-genre="newWave"]{
     color: #D293F2;
+}
+
+li[data-genre="classical"]::before{
+    color: #00F1FF;
+}
+
+li[data-genre="rock"]::before{
+    color: #FF0078;
+}
+
+li[data-genre="newWave"]::before{
+    color: #D293F2;
+}
+
+li[data-genre="classical"]:hover{
+    background-color: #00F1FF;
+}
+
+li[data-genre="rock"]:hover{
+    background-color: #FF0078;
+}
+
+li[data-genre="newWave"]:hover{
+    background-color: #D293F2;
 }
