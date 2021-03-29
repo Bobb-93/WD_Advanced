@@ -20,10 +20,11 @@ function filterByGenre(genre){
     totalPlayTime = 0;
     
     liList.forEach(function(listItem){
-        if(genre === "all" || listItem.dataset.genre === genre){
+        let listItemGenre  = listItem.dataset.genre;
+        if(genre === "all" || listItemGenre === genre){
             listItem.style.display = "list-item";
             totalPlayTime += toSeconds(listItem.dataset.trackLength);
-        }else if(listItem.dataset.genre !== genre){
+        }else if(listItemGenre !== genre){
             listItem.style.display = "none";
         }
     });
@@ -39,7 +40,7 @@ radioList.forEach(function(element){
             filterByGenre("rock");
         }else if(this.value === "newWave"){
             filterByGenre("newWave");
-        }else if(this.value === "all"){
+        }else{
             filterByGenre("all");
         }
     });
