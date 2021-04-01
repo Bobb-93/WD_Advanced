@@ -1,0 +1,24 @@
+$bg-color: #F99;
+$color:darken($bg-color, 70%);
+
+@mixin square($side) {
+    width: $side;
+    height: 10em;
+}
+
+@mixin red {
+    background-color: $bg-color;
+    color: $color;
+}
+
+.test{
+    @include square(10em);
+    @include red;
+    &:hover{
+        background-color: lighten($bg-color, 10%);
+    }
+    .child{
+        @include square(5em);
+        background-color: blue;
+    }
+}

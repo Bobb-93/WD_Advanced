@@ -1,0 +1,14 @@
+.test {
+  width: 10em;
+  height: 10em;
+  background-color: #F99;
+  color: #330000;
+}
+.test:hover {
+  background-color: #ffcccc;
+}
+.test .child {
+  width: 5em;
+  height: 10em;
+  background-color: blue;
+}/*# sourceMappingURL=test.css.map */
