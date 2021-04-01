@@ -9,56 +9,100 @@
     <meta name="author" content="Boris Yakimov">
     <title>To Do App</title>
     <style>
-        h1, h2{
-            text-align: center;
+        *{
+            margin: 0;
+            padding: 0;
         }
+        
+        h1{
+            text-align: center;
+            margin-top: .5em;
+        }
+        
+        h2{
+            margin-left: 10em;
+        }
+        
+        form{
+            margin-left: 1em;
+            margin-right: 1em;
+            /* padding-left: 1em; */
+        }
+        
+        #submitButton, legend, label, textarea{
+            margin-left: 1em;
+        }
+        
         table, td, th{
             border: 1px solid #000;
         }
         table{
             border-collapse: collapse;
         }
+        fieldset{
+            width: 50%;
+        }
         #requiredAsterisk{
             text-align: right;
+            margin-right: 50%;
         }
         #tasksTable{
             display: none;
+        }
+        
+        button{
+            margin-bottom: 1em;
+        }
+        
+        #markAllAsCompleted, #deleteAllCompleted, #deleteAllTasks{
+            margin-left: 1em;
+            margin-top: 1em;
+        }
+        
+        #myTasks, #noTasks, #tasksTable{
+            position: absolute;
+        }
+        
+        #myTasks{
+            top: 3.5em;
+            left: 30em;
+        }
+        
+        #noTasks{
+            top: 9.5em;
+            left: 58.5em;
+        }
+
+        #addTasks{
+            margin-top: 1em;
         }
     </style>
 </head>
 <body>
     <h1>To Do App</h1>
-    <!-- <nav>
-        <ul>
-            <li id="addTasks">Add Tasks</li>
-            <li id="myCalendar">My Calendar</li>
-        </ul>
-    </nav> -->
-
+    
     <header>
-        <h2>Add Tasks:</h2>
+        <h2 id="addTasks">Add Tasks:</h2>
     </header>
-
-    <form method="POST">
+    
         <fieldset>
             <legend>Create Task:</legend>
             <label for="taskTitle">Enter task:</label>
-            <input type="text" id="taskTitle" name="taskTitle" required><span>&nbsp;*</span> <br><br>
+            <input type="text" id="taskTitle" name="taskTitle" required /><span>&nbsp;*</span> <br><br>
             <label for="taskDetails">Some details:</label><br>
             <textarea name="taskDetails" id="taskDetails" cols="35" rows="10"></textarea><br><br>
             <label for="taskDate">Task date:</label>
             <input type="date" id="taskDate" name="taskDate"><br><br>
             <label for="taskTime">Task time:</label>
             <input type="time" id="taskTime" name="taskTime"><br><br>
-            <button type="button" id="submitButton">Add Task</button>
+            <button type="submit" id="submitButton">Add Task</button>
         </fieldset>
         <p id="requiredAsterisk">* is required!</p>
-    </form>
     
-    <button>Mark All as Completed</button>
-    <button>Delete All Completed</button>
-    <button>Delete All Tasks</button>
-    <h2>My Tasks:</h2>
+    <button type="button" id="markAllAsCompleted">Mark All as Completed</button>
+    <button type="button" id="deleteAllCompleted">Delete All Completed</button>
+    <button type="button" id="deleteAllTasks">Delete All Tasks</button>
+    <h2 id="myTasks">My Tasks:</h2>
     <p id="noTasks">There are no current tasks.</p>
     <table id="tasksTable">
         <tr>
@@ -69,25 +113,6 @@
             <th>Time</th>
         </tr>
     </table>
-
-    <script>
-        function addTask(){
-            const taskTitle = document.getElementById("taskTitle").value;
-            const taskDetails = document.getElementById("taskDetails").value;
-            const taskDate = document.getElementById("taskDate").value;
-            const taskTime = document.getElementById("taskTime").value;
-            
-            console.log(taskTitle);
-            console.log(taskDetails);
-            console.log(taskDate);
-            console.log(taskTime);
-
-            
-        }
-
-        const submitButton = document.getElementById("submitButton");
-        submitButton.addEventListener("click", addTask);
-        
-    </script>
+    <script src="toDo.js"></script>
 </body>
 </html>
