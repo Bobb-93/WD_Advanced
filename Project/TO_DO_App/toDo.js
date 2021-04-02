@@ -1,4 +1,18 @@
+const submitButton = document.getElementById("submitButton");
+const markAllAsCompleted = document.getElementById("markAllAsCompleted");
+const deleteAllCompleted = document.getElementById("deleteAllCompleted");
+const deleteAllTasks = document.getElementById("deleteAllTasks");
+const tasksTable = document.getElementById("tasksTable");
+const myTasks = document.getElementById("myTasks");
+
+
+
 function addTask(){
+    let taskTitle = document.getElementById("taskTitle").value;
+    let taskDetails = document.getElementById("taskDetails").value;
+    let taskDate = document.getElementById("taskDate").value;
+    let taskTime = document.getElementById("taskTime").value;
+    
     if(taskTitle !== ``){
         console.log(`taskTitle = ${taskTitle}`);
         console.log(`taskDetails = ${taskDetails}`);
@@ -12,16 +26,19 @@ function addTask(){
     
 }
 
-const submitButton = document.getElementById("submitButton");
-const markAllAsCompleted = document.getElementById("markAllAsCompleted");
-const deleteAllCompleted = document.getElementById("deleteAllCompleted");
-const deleteAllTasks = document.getElementById("deleteAllTasks");
-const taskTitle = document.getElementById("taskTitle").value;
-const taskDetails = document.getElementById("taskDetails").value;
-const taskDate = document.getElementById("taskDate").value;
-const taskTime = document.getElementById("taskTime").value;
-const tasksTable = document.getElementById("tasksTable");
-const myTasks = document.getElementById("myTasks");
+taskDate.valueAsDate = new Date();
+
+var timepicker = new TimePicker('taskTime', {
+    lang: 'en',
+    theme: 'dark'
+});
+
+timepicker.on('change', function(evt) {
+    
+    var value = (evt.hour || '00') + ':' + (evt.minute || '00');
+    evt.element.value = value;
+    
+});
 
 submitButton.addEventListener("click", addTask);
 markAllAsCompleted.addEventListener("click", markAllAsCompleted);

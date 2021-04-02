@@ -7,7 +7,12 @@
     <meta name="keywords" content="to do app, tasks, calendar, manager">
     <meta name="description" content="To Do App">
     <meta name="author" content="Boris Yakimov">
+    
     <title>To Do App</title>
+
+    <script src="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/timepicker.js/latest/timepicker.min.css" rel="stylesheet"/>
+
     <style>
         *{
             margin: 0;
@@ -40,11 +45,12 @@
             border-collapse: collapse;
         }
         fieldset{
-            width: 50%;
+            width: 40%;
+            margin-left: 1em;
         }
         #requiredAsterisk{
             text-align: right;
-            margin-right: 50%;
+            margin-right: 60%;
         }
         #tasksTable{
             display: none;
@@ -66,12 +72,23 @@
         #myTasks{
             display: none;
             top: 3.5em;
-            left: 30em;
+            left: 25em;
         }
         
+        #taskTime{
+            display: block;
+            margin-left: 1.3em;
+            margin-top: .2em;
+            margin-bottom: 0.8em;
+        }
 
         #addTasks{
             margin-top: 1em;
+        }
+
+        #submitButton{
+            margin-left: 1.3em;
+
         }
     </style>
 </head>
@@ -82,23 +99,29 @@
         <h2 id="addTasks">Add Tasks:</h2>
     </header>
     
-        <fieldset>
-            <legend>Create Task:</legend>
-            <label for="taskTitle">Enter task:</label>
-            <input type="text" id="taskTitle" name="taskTitle" required /><span>&nbsp;*</span> <br><br>
-            <label for="taskDetails">Some details:</label><br>
-            <textarea name="taskDetails" id="taskDetails" cols="35" rows="10"></textarea><br><br>
-            <label for="taskDate">Task date:</label>
-            <input type="date" id="taskDate" name="taskDate"><br><br>
-            <label for="taskTime">Task time:</label>
-            <input type="time" id="taskTime" name="taskTime"><br><br>
-            <button type="submit" id="submitButton">Add Task</button>
-        </fieldset>
-        <p id="requiredAsterisk">* is required!</p>
+    <fieldset>
+        <legend>Create Task:</legend>
+        <label for="taskTitle">Enter task:</label>
+        <input type="text" id="taskTitle" name="taskTitle" required><span>&nbsp;*</span> <br><br>
+
+        <label for="taskDetails">Some details:</label><br>
+        <textarea name="taskDetails" id="taskDetails" cols="35" rows="10"></textarea><br><br>
+
+        <label for="taskDate">Task date:</label>
+        <input type="date" id="taskDate" name="taskDate"><br><br>
+
+        <label for="taskTime">Task time:</label>
+        <!-- <input type="time" id="taskTime" name="taskTime" value="00:00:00"><br><br> -->
+        <input type="text" id="taskTime" placeholder="Time">
+
+        <button type="submit" id="submitButton">Add Task</button>
+    </fieldset>
+    <p id="requiredAsterisk">* is required!</p>
     
     <button type="button" id="markAllAsCompleted">Mark All as Completed</button>
     <button type="button" id="deleteAllCompleted">Delete All Completed</button>
     <button type="button" id="deleteAllTasks">Delete All Tasks</button>
+
     <h2 id="myTasks">My Tasks:</h2>
     <table id="tasksTable">
         <tr>
