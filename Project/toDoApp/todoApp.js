@@ -52,6 +52,10 @@ function deleteNodes(){
     faTrashAlt.forEach(
         function(trashAlt, index){
             trashAlt.addEventListener("click", function(){
+                Array.prototype.forEach.call( element, function( node ) {
+                    node.parentNode.removeChild( node );
+                });
+                
                 // let parameter = index;
                 // console.log(index);
                 // console.log(trashAlt);
