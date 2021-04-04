@@ -38,6 +38,15 @@ todoAddBtn.addEventListener("click", function(){
 
 });
 
+// function deleteNodes(){
+//     let listItems = document.getElementsByTagName("li"); 
+//     for (var i = 0; i < listItems.length; i++) {
+//      listItems[i].onclick = function() {
+//     this.parentNode.removeChild(this);
+//     }
+// }
+
+
 function deleteNodes(){
     console.log(111);
     faTrashAlt.forEach(
@@ -45,21 +54,27 @@ function deleteNodes(){
             trashAlt.addEventListener("click", function(){
                 // let parameter = index;
                 // console.log(index);
-                console.log(trashAlt);
+                // console.log(trashAlt);
     
                 // let liToBeDeleted = document.querySelector(`li[data-id="${index}"]`);
     
-                let liToBeDeleted = document.createElement(`li`);
-                liToBeDeleted.dataset.id = index+1;
+                // let liToBeDeleted = document.createElement(`li`);
+                // liToBeDeleted.dataset.id = index+1;
     
-                liToBeDeleted.innerHTML = `<span>${index+1}.</span><span>${todoItemsArray[index].title}</span><div class="removeTodo"><i class="far fa-trash-alt"></i></div>`;
+                // liToBeDeleted.innerHTML = `<span>${index+1}.</span><span>${todoItemsArray[index].title}</span><div class="removeTodo"><i class="far fa-trash-alt"></i></div>`;
     
-                console.dir(liToBeDeleted);
-                console.dir(todoItems);
-                todoItems.removeChild(liToBeDeleted);
+                // console.dir(liToBeDeleted);
+                // console.dir(todoItems);
+                // todoItems.removeChild(liToBeDeleted.);
 
                 // console.log(liToBeDeleted.parentNode);
                 // liToBeDeleted.parentNode.removeChild(liToBeDeleted);
+
+                console.log(index);
+                let liToBeDeleted = document.querySelector(`.todo-items>li[data-id='${index}']`);
+                todoItems.removeChild(liToBeDeleted);
+                todoItemsArray.splice(index, 1);
+                todosCount -= 1;
             });
         }
     );
