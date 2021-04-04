@@ -3,11 +3,13 @@ const addNewToDo = document.querySelector("[placeholder='add new todo ...']");
 const todoItems = document.querySelector(".todo-items");
 const output = document.querySelector(".output");
 // const removeTodo = document.querySelectorAll(".removeTodo");
-const faTrashAlt = document.querySelectorAll(".fa-trash-alt");
+let faTrashAlt = document.querySelectorAll(".fa-trash-alt");
 
 let todoItemsArray = [];
 let todo = {};
 let todosCount = 1;
+
+deleteNodes();
 
 todoAddBtn.addEventListener("click", function(){
     console.log(addNewToDo.value);
@@ -23,21 +25,41 @@ todoAddBtn.addEventListener("click", function(){
     <div class="removeTodo"><i class="far fa-trash-alt"></i></div>`;
     li.dataset.id = todosCount;
     todoItems.appendChild(li);
-    faTrashAlt.forEach(function(e){
-        
-    });
+
+    //!!!
+    //add all trash icons to faTrashAlt
+    faTrashAlt = document.querySelectorAll(".fa-trash-alt");
+
     output.innerText = todosCount;
     todosCount += 1;
 
     console.dir(faTrashAlt);
 
+    deleteNodes();
 });
 
-faTrashAlt.forEach(
-    (trashAlt) => {
-        trashAlt.addEventListener("click", function(){
-            console.log(1);
-            // todoItemsArray[1];
-        });
-    }
-);
+function deleteNodes(){
+    console.log(111);
+    faTrashAlt.forEach(
+        function(trashAlt, index){
+            trashAlt.addEventListener("click", function(){
+                // let parameter = index;
+                // console.log(index);
+                console.log(trashAlt);
+    
+                // let liToBeDeleted = document.querySelector(`li[data-id="${index}"]`);
+    
+                let liToBeDeleted = document.createElement(`li`);
+                liToBeDeleted.dataset.id = index+1;
+    
+                liToBeDeleted.innerHTML = `<span>${index+1}.</span><span>${todoItemsArray[index].title}</span><div class="removeTodo"><i class="far fa-trash-alt"></i></div>`;
+    
+                console.log(`liToBeDeleted = ${liToBeDeleted}`);
+                console.log(liToBeDeleted.parentNode);
+                liToBeDeleted.parentNode.removeChild(liToBeDeleted);
+            });
+        }
+    );
+    
+}
+
