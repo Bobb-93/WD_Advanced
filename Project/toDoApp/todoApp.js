@@ -34,8 +34,8 @@ todoAddBtn.addEventListener("click", function(){
     todosCount += 1;
 
     console.dir(faTrashAlt);
-
     deleteNodes();
+
 });
 
 function deleteNodes(){
@@ -54,12 +54,14 @@ function deleteNodes(){
     
                 liToBeDeleted.innerHTML = `<span>${index+1}.</span><span>${todoItemsArray[index].title}</span><div class="removeTodo"><i class="far fa-trash-alt"></i></div>`;
     
-                console.log(`liToBeDeleted = ${liToBeDeleted}`);
-                console.log(liToBeDeleted.parentNode);
-                liToBeDeleted.parentNode.removeChild(liToBeDeleted);
+                console.dir(liToBeDeleted);
+                console.dir(todoItems);
+                todoItems.removeChild(liToBeDeleted);
+
+                // console.log(liToBeDeleted.parentNode);
+                // liToBeDeleted.parentNode.removeChild(liToBeDeleted);
             });
         }
     );
     
 }
-
