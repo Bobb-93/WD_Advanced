@@ -52,16 +52,12 @@ function deleteNodes(){
     faTrashAlt.forEach(
         function(trashAlt, index){
             trashAlt.addEventListener("click", function(){
-                Array.prototype.forEach.call( element, function( node ) {
-                    node.parentNode.removeChild( node );
-                });
-                
-                // let parameter = index;
-                // console.log(index);
                 // console.log(trashAlt);
     
+                //1-st attempt - NOT WORKING
                 // let liToBeDeleted = document.querySelector(`li[data-id="${index}"]`);
     
+                //2-nd attempt - NOT WORKING
                 // let liToBeDeleted = document.createElement(`li`);
                 // liToBeDeleted.dataset.id = index+1;
     
@@ -71,14 +67,21 @@ function deleteNodes(){
                 // console.dir(todoItems);
                 // todoItems.removeChild(liToBeDeleted.);
 
+                //2-nd attempt, but slightly different - NOT WORKING
                 // console.log(liToBeDeleted.parentNode);
                 // liToBeDeleted.parentNode.removeChild(liToBeDeleted);
 
                 console.log(index);
-                let liToBeDeleted = document.querySelector(`.todo-items>li[data-id='${index}']`);
+                //3-rd attempt - the right items are removed, but I get errors
+                let liToBeDeleted = document.querySelector(`.todo-items>li[data-id='${index+1}']`);
                 todoItems.removeChild(liToBeDeleted);
+                
+                console.log(todoItemsArray);
                 todoItemsArray.splice(index, 1);
+                console.log(todoItemsArray);
+                
                 todosCount -= 1;
+                output.innerText = todosCount;
             });
         }
     );
