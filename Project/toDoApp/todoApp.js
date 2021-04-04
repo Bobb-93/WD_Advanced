@@ -5,9 +5,10 @@ const output = document.querySelector(".output");
 // const removeTodo = document.querySelectorAll(".removeTodo");
 let faTrashAlt = document.querySelectorAll(".fa-trash-alt");
 
-let todoItemsArray = [];
-let todo = {};
-let todosCount = 1;
+// let todoItemsArray = [];
+// let todo = {};
+let todosCount = 0;
+let totalTodos = 0;
 
 deleteNodes();
 
@@ -15,15 +16,17 @@ todoAddBtn.addEventListener("click", function(){
     console.log(addNewToDo.value);
     let todoItem = addNewToDo.value
 
-    todo.id = todosCount;
-    todo.title = todoItem;
-    todoItemsArray.push(todo);
+    // todo.id = todosCount;
+    // todo.title = todoItem;
+    // todoItemsArray.push(todo);
 
     var li = document.createElement("li");
-    li.innerHTML = `<span>${todosCount}.</span>
+    todosCount += 1;
+    totalTodos += 1;
+    li.innerHTML = `<span>${totalTodos}.</span>
     <span>${todoItem}</span>
     <div class="removeTodo"><i class="far fa-trash-alt"></i></div>`;
-    li.dataset.id = todosCount;
+    li.dataset.id = totalTodos;
     todoItems.appendChild(li);
 
     //!!!
@@ -31,7 +34,9 @@ todoAddBtn.addEventListener("click", function(){
     faTrashAlt = document.querySelectorAll(".fa-trash-alt");
 
     output.innerText = todosCount;
-    todosCount += 1;
+    
+    addNewToDo.value = "";
+    addNewToDo.focus();
 
     console.dir(faTrashAlt);
     deleteNodes();
@@ -45,7 +50,6 @@ todoAddBtn.addEventListener("click", function(){
 //     this.parentNode.removeChild(this);
 //     }
 // }
-
 
 function deleteNodes(){
     console.log(111);
@@ -74,14 +78,16 @@ function deleteNodes(){
                 console.log(index);
                 //3-rd attempt - the right items are removed, but I get errors
                 let liToBeDeleted = document.querySelector(`.todo-items>li[data-id='${index+1}']`);
-                todoItems.removeChild(liToBeDeleted);
                 
-                console.log(todoItemsArray);
-                todoItemsArray.splice(index, 1);
-                console.log(todoItemsArray);
+                todoItems.removeChild(liToBeDeleted);
                 
                 todosCount -= 1;
                 output.innerText = todosCount;
+                // console.log(todoItemsArray);
+                // todoItemsArray.splice(index, 1);
+                // console.log(todoItemsArray);
+                console.log('end of function');
+                
             });
         }
     );
