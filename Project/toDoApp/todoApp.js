@@ -1,3 +1,4 @@
+//using a lot of variables...
 const todoAddBtn = document.querySelector(".todo-add-btn");
 const addNewToDo = document.querySelector("[placeholder='add new todo ...']");
 const todoItems = document.querySelector(".todo-items");
@@ -5,6 +6,7 @@ const output = document.querySelector(".output");
 // const removeTodo = document.querySelectorAll(".removeTodo");
 let faTrashAlt = document.querySelectorAll(".fa-trash-alt");
 
+//an array, that we might need
 // let todoItemsArray = [];
 // let todo = {};
 let todosCount = 0;
@@ -13,7 +15,7 @@ let totalTodos = 0;
 deleteNodes();
 
 todoAddBtn.addEventListener("click", function(){
-    console.log(addNewToDo.value);
+    // console.log(addNewToDo.value);
     let todoItem = addNewToDo.value
 
     // todo.id = todosCount;
@@ -29,20 +31,22 @@ todoAddBtn.addEventListener("click", function(){
     li.dataset.id = totalTodos;
     todoItems.appendChild(li);
 
-    //!!!
     //add all trash icons to faTrashAlt
-    faTrashAlt = document.querySelectorAll(".fa-trash-alt");
 
     output.innerText = todosCount;
     
     addNewToDo.value = "";
     addNewToDo.focus();
 
-    console.dir(faTrashAlt);
+    // console.dir(faTrashAlt);
+
+    //every time we click "Add" we call function deleteNodes, which
+    //adds event listeners to every trash icon
     deleteNodes();
 
 });
 
+//example from random stackoverflow answer...
 // function deleteNodes(){
 //     let listItems = document.getElementsByTagName("li"); 
 //     for (var i = 0; i < listItems.length; i++) {
@@ -52,8 +56,12 @@ todoAddBtn.addEventListener("click", function(){
 // }
 
 function deleteNodes(){
-    console.log(111);
+    console.log('call deleteNodes()');
+    faTrashAlt = document.querySelectorAll(".fa-trash-alt");
+
     faTrashAlt.forEach(
+        //using index... A bad idea, for now. Works only in some cases 
+        //and throws errors
         function(trashAlt, index){
             trashAlt.addEventListener("click", function(){
                 // console.log(trashAlt);
@@ -75,8 +83,9 @@ function deleteNodes(){
                 // console.log(liToBeDeleted.parentNode);
                 // liToBeDeleted.parentNode.removeChild(liToBeDeleted);
 
-                console.log(index);
-                //3-rd attempt - the right items are removed, but I get errors
+                // console.log(index);
+                //3-rd attempt - the right items are removed, but I 
+                // errors are thrown
                 let liToBeDeleted = document.querySelector(`.todo-items>li[data-id='${index+1}']`);
                 
                 todoItems.removeChild(liToBeDeleted);
