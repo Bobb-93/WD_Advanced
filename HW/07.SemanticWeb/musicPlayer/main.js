@@ -139,17 +139,22 @@ dom.songs.addEventListener("click", function(e){
         return;
     };
 
-    let trackId = e.target.dataset.id;
-    // console.log(trackId);
+    //First method:
+    // By using data-id!
 
-    // console.log(songs.find(x => x.id = trackId).songSrc);
-    let song = songs.find(function (item) { 
-        return item.id === +trackId; 
-    });
+    // let trackId = e.target.dataset.id;
+    // let song = songs.find(function (item) { 
+    //     return item.id === +trackId; 
+    // });
 
-    // console.log(`${song.songSrc}`);
-    // console.log(dom.audioPlayer.src);
-    
-    dom.audioPlayer.src = `${song.songSrc}`;
+    // dom.audioPlayer.src = `${song.songSrc}`;
+
+    //Second method:
+    //By using firstChild
+    //NOTE: The names of the tracks must be the same as the names of 
+    //the files!
+    let trackSRC = e.target.firstChild;
+    console.log(trackSRC);
+    dom.audioPlayer.src = "audio/"+trackSRC.nodeValue+".mp3";
 });
 filterByGenre("all");
