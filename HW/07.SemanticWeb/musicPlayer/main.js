@@ -140,16 +140,14 @@ dom.songs.addEventListener("click", function(e){
     };
 
     let trackId = e.target.dataset.id;
-    console.log(trackId);
+    // console.log(trackId);
 
     // console.log(songs.find(x => x.id = trackId).songSrc);
     let song = songs.find(function (item) { 
-        // console.log(item.id);
         return item.id === +trackId; 
     });
 
     // console.log(`${song.songSrc}`);
-
     // console.log(dom.audioPlayer.src);
     
     dom.audioPlayer.src = `${song.songSrc}`;
