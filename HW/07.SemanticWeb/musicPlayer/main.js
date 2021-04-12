@@ -2,6 +2,8 @@
 const radioList = document.querySelectorAll("#genres input[type='radio']");
 const liList = document.querySelectorAll("li");
 const totalPlayTimeSpan = document.getElementById("totalPlayTimeSpan");
+const nowPlaying = document.querySelector("figcaption>span");
+const songs = document.getElementById("songs");
 let totalPlayTime;
 
 //auxilary functions
@@ -46,4 +48,11 @@ radioList.forEach(function(element){
     });
 });
 
+songs.addEventListener("click", function(){
+    if(e.target.nodeName!=="LI"){
+        return 
+    };
+
+    
+});
 filterByGenre("all");

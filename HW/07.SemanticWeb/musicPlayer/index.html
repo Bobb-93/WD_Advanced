@@ -15,9 +15,9 @@
         <label for="rock">Rock</label><input type="radio" id="rock" name="genre" value="rock"> |
         <label for="newWave">New Wave</label><input type="radio" id="newWave" name="genre" value="newWave"> |
     </p>
-    <ul>
-        <li data-genre="classical" data-track-length="00:03:36"><span>03:36 - </span>Antonio Vivaldi - The Four Seasons, Op. 8, "Spring": Allegro</li>
-        <li data-genre="classical" data-track-length="00:05:38"><span>05:38 - </span>Richard Wagner - The Valkyrie: Ride of the Valkyries</li>
+    <ul id="songs">
+        <li data-genre="classical" data-track-length="00:03:35"><span>03:35 - </span>Antonio Vivaldi - The Four Seasons, Op. 8, "Spring": Allegro</li>
+        <li data-genre="classical" data-track-length="00:05:01"><span>05:01 - </span>Richard Wagner - The Valkyrie: Ride of the Valkyries</li>
         <li data-genre="rock" data-track-length="00:04:48"><span>04:48 - </span>AC/DC - Dirty Deeds Done Dirt Cheap</li>
         <li data-genre="newWave" data-track-length="00:04:04"><span>04:04 - </span>a-Ha - Take On Me</li>
         <li data-genre="rock" data-track-length="00:05:41"><span>05:41 - </span>Deep Purple - Smoke On The Water</li>
@@ -26,9 +26,18 @@
         <li data-genre="newWave" data-track-length="00:03:12"><span>03:12 - </span>Transmission - Joy Division</li>
         <li data-genre="rock" data-track-length="00:04:39"><span>04:39 - </span>Nirvana - Smells Like Teen Spirit</li>
         <li data-genre="newWave" data-track-length="00:04:43"><span>04:43 - </span>A Forest - The Cure</li>
-        <li data-genre="classical" data-track-length="00:49:01"><span>49:01 - </span>Gustav Holst - The Planets, Op. 32</li>
+        <li data-genre="classical" data-track-length="00:08:34"><span>08:34 - </span>Gustav Holst - The Planets, Op. 32</li>
     </ul>
     <p>Total Play Time: <span id="totalPlayTimeSpan"></span></p>
+    <figure>
+        <figcaption>Now playing: <span></span></figcaption>
+        <audio
+            controls
+            src="audio/The Four Seasons, Op. 8, Spring Allegro.mp3">
+                Your browser does not support the
+                <code>audio</code> element.
+        </audio>
+    </figure>
     <script src="main.js"></script>
 </body>
 </html>

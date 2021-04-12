@@ -30,7 +30,7 @@ li::before{
 }
 
 li:hover{
-    cursor: context-menu;
+    cursor: pointer;
 }
 
 label[for="classical"]{
