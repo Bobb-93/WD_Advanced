@@ -109,14 +109,27 @@ function filterByGenre(genre){
 //event listener
 dom.radioList.forEach(function(element){
     element.addEventListener("click", function(){
-        if(this.value === "classical"){
-            filterByGenre("classical");
-        }else if(this.value === "rock"){
-            filterByGenre("rock");
-        }else if(this.value === "newWave"){
-            filterByGenre("newWave");
-        }else{
-            filterByGenre("all");
+        // if(this.value === "classical"){
+        //     filterByGenre("classical");
+        // }else if(this.value === "rock"){
+        //     filterByGenre("rock");
+        // }else if(this.value === "newWave"){
+        //     filterByGenre("newWave");
+        // }else{
+        //     filterByGenre("all");
+        // }
+        switch(this.value){
+            case "classical":
+                filterByGenre("classical");
+                break;
+            case "rock":
+                filterByGenre("rock");
+                break;
+            case "newWave":
+                filterByGenre("newWave");
+                break;
+            default:
+                filterByGenre("all");
         }
     });
 });
