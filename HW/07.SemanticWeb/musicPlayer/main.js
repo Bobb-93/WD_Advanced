@@ -156,6 +156,7 @@ dom.songs.addEventListener("click", function(e){
     let trackSRC = e.target.firstChild;
     console.log(trackSRC);
     // dom.audioPlayer.src = "audio/"+trackSRC.nodeValue+".mp3";
+    dom.nowPlaying.innerText = `${trackSRC.nodeValue}`;
     dom.audioPlayer.src = `audio/${trackSRC.nodeValue}.mp3`;
 });
 filterByGenre("all");
