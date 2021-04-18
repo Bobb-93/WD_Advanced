@@ -7,17 +7,25 @@ function render(data){
     dom.output.innerHTML = data;
 };
 
-const dataURL = './data/data.txt';
+const dataURL = './data/ddata.txt';
 
 let fetchAPI = function(method, url){
     fetch(url)
-        .then(function (response){
-            return response.text();
-        })
-        .then(function (responseText){
-            // do something with responseText
-            nodes.output.innerHTML = responseText;
-        });
+        .then(
+        //     function (response){
+        //         return response.text();
+        // }
+            resp => resp.text()
+        )
+        .then(
+            // function (responseText){
+            //     // do something with responseText
+            //     nodes.output.innerHTML = responseText;
+            // }
+            // data => console.log(data)
+            data => render(data)
+        )
+        .catch(err => console.dir(err));
 };
 
 let fetchDataByXHR = function(method, url){
@@ -50,9 +58,12 @@ dom.getDataBtn.addEventListener('click', function(){
     //19:00:00
     // let data = fetchDataByXHR("GET", './data/data.txt');
     // render(data);
+
     //some other method:
     //let todoData = fetchDataByXHR("POST", './data/data.txt');
-    data = fetchDataByXHR("GET", './data/data.txt');
+    // data = fetchDataByXHR("GET", './data/data.txt');
+
+    fetchAPI("GET", dataURL);
 });
 
 //small example
