@@ -7,7 +7,7 @@ function render(data){
     dom.output.innerHTML = data;
 };
 
-const dataURL = './data/ddata.txt';
+const dataURL = './data/data.txt';
 
 let fetchAPI = function(method, url){
     fetch(url)
@@ -63,6 +63,7 @@ dom.getDataBtn.addEventListener('click', function(){
     //let todoData = fetchDataByXHR("POST", './data/data.txt');
     // data = fetchDataByXHR("GET", './data/data.txt');
 
+    // fetchDataByXHR("GET", dataURL);
     fetchAPI("GET", dataURL);
 });
 
