@@ -1,12 +1,3 @@
-# Comma separated values (CSV format)
-id, title, completed
-1, Learn HTML, true
-2, Learn CSS, false
-3, Learn JS, false
-
-# XML eXtended Markup Language
-
-# JSON (JavaScript Object Notation)
 [
     {
         "id": 1,
@@ -22,5 +13,5 @@ id, title, completed
         "id": 3,
         "title": "Learn JS",
         "completed": false
-    },
+    }
 ]

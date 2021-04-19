@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json API test</title>
+</head>
+<body>
+    <div class="joke">
+        
+    </div>
+    
+    <script>
+        function render(data){
+            console.log(data);
+            document.querySelector(".joke").innerHTML += data.value.joke;
+        }
+
+        let jokeURL = "http://api.icndb.com/jokes/random";
+        function fetchJoke(){
+            fetch(jokeURL)
+            .then(response => response.json())//response.text() - като низче
+            // .then(data => console.log(data));
+            .then(data => {
+                // todos = data;
+                render(data);
+            });
+        }
+
+        setInterval(() => {
+                fetchJoke();
+            }, 10000);
+</script>
+</body>
+</html>
